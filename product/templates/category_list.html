@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for category in categories %}
+        <h1><a href="">{{ category.name }}</a></h1>
+        <p>{{ category.description|linebreaks }}</p>
+    {% endfor %}
+{% endblock content %}
