@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for category in categories %}
-        <h1><a href="">{{ category.name }}</a></h1>
+        <h1><a href="{% url "product.views.category_detail" slug=category.slug %}">{{ category.name }}</a></h1>
         <p>{{ category.description|linebreaks }}</p>
     {% endfor %}
 {% endblock content %}

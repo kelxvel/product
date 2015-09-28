@@ -6,6 +6,7 @@ class Category(models.Model):
     name = models.CharField(max_length = 128, unique = True)
     slug = models.SlugField(blank = True)
     description = models.TextField()
+    # products =  
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name) 
@@ -13,7 +14,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-
+    
 class Product(models.Model):
     name = models.CharField(max_length = 128, unique = True)
     slug = models.SlugField(blank = True)
@@ -21,6 +22,8 @@ class Product(models.Model):
     price = models.FloatField()
     created_at = models.DateTimeField(default = timezone.now)
     modified_at = models.DateTimeField(blank = True, null = True)
+
+    category = models.ForeignKey(Category)
 
     def modify(self):
         self.modified_at = timezone.now()
