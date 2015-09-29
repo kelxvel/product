@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for product in products %}
-        <h1><a href="">{{ product.name }}</a></h1>
+        <h1><a href="{% url "product.views.product_detail" category_slug=product.category.slug product_slug=product.slug %}">{{ product.name }}</a></h1>
         <p>{{ product.description|linebreaks }}</p>
         <p><strong>Price</strong> {{ product.price }} $</p>
     {% endfor %}
