@@ -12,7 +12,7 @@ class Category(models.Model):
         self.slug = slugify(self.name) 
         super(Category, self).save(*args, **kwargs)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
     
 class Product(models.Model):
@@ -33,5 +33,5 @@ class Product(models.Model):
         self.slug = slugify(self.name)
         super(Product, self).save(*args, **kwargs)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
