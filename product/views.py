@@ -23,3 +23,6 @@ def new_products(request):
         return render(request, 'new_products.html', {'products': products})
     else:
         raise PermissionDenied 
+
+def root_page(request):
+    return render(request, 'index.html', {})
