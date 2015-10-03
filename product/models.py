@@ -6,7 +6,6 @@ class Category(models.Model):
     name = models.CharField(max_length = 128, unique = True)
     slug = models.SlugField(blank = True)
     description = models.TextField()
-    # products =  
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name) 
